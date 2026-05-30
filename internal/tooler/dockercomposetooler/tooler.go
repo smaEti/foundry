@@ -21,7 +21,6 @@ func (tooler *dockerComposeTooler) Name() string {
 }
 
 func (tooler *dockerComposeTooler) Gauge(ctx context.Context) error {
-	return root.AnyOneExecChecker(ctx, "docker-compose", "docker compose")
 	// Legacy standalone binary.
 	if err := root.ExecChecker(ctx, "docker-compose"); err == nil {
 		return nil
